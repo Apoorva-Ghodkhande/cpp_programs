@@ -94,4 +94,5 @@ GitHubProfile * y1=&g1;
 GitHubProfile * y2=&g2;
 y1->isStarProject();
 y2->isStarProject();
+y2->isStarProject();
 }
