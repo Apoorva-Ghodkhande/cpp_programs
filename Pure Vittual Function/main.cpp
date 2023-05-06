@@ -79,7 +79,10 @@ void practice()
 
 int main(){
     GitHubProfile *a= new startUpGitHubProfile("Apoorva");
+    GitHubProfile *b= new studentGitHubProfile("Apoorva");
 a->practice();
-delete a;
+b->practice();
+delete a,b;
 a=nullptr;
+b=nullptr;
 }
