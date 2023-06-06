@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Jayant/OneDrive/Desktop/CppProgramPractice/LinkedList",
-      "program": "c:/Users/Jayant/OneDrive/Desktop/CppProgramPractice/LinkedList/build/Debug/outDebug",
+      "cwd": "c:/Users/Jayant/OneDrive/Desktop/CppProgramPractice/Binary Search Tree",
+      "program": "c:/Users/Jayant/OneDrive/Desktop/CppProgramPractice/Binary Search Tree/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

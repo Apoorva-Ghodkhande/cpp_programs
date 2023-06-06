@@ -127,6 +127,81 @@ void deleteFirst()
     delete temp;
 }
 
+Node* get(int index)
+{
+
+if(index <0 || index>length) return nullptr;
+
+    Node* temp=head;
+    for(int i=0;i<index;i++)
+    {
+        temp=temp->next;
+    }
+    return temp;
+
+}
+
+bool set(int index, int value)
+{
+Node* temp=get(index);
+if(temp){
+    temp->value=value;
+    return true;
+}
+return false;
+}
+
+bool insert(int index, int value){
+    if(index <0 || index>length) return false;
+    if(index==0){
+        prepend(value);
+        return true;
+    }
+    if(index==length){
+        appendList(value);
+        return true;
+    }
+    
+        Node* newNode = new Node(value);
+        Node* temp= get(index-1);
+        newNode-> next=temp->next;
+        temp->next=newNode;
+        length++;
+        return true;
+}
+
+void deleteNode(int index)
+{
+      if(index <0 || index>=length) return;
+    if(index==0){
+        deleteFirst();
+    }
+    if(index==length-1){
+        deleteLast();
+    }  
+    Node* pre=get(index-1);
+    Node* temp=pre->next;
+pre->next=temp->next;
+delete temp;
+length--;
+    
+}
+
+void reverse()
+{
+    Node* temp=head;
+    head=tail;
+    tail=temp;
+    Node* before=nullptr;
+    Node* after=temp->next;
+    for(int i=0;i<length;i++){
+        after=temp->next;
+        temp->next=before;
+        before=temp;
+        temp=after;
+    }
+}
+
 ~LinkedList()
 {
     Node* temp=head;
@@ -150,8 +225,16 @@ int main()
 list->appendList(9);
 list->appendList(5);
 //list->printList();
-  list->deleteLast();
-  list->prepend(1);
-  list->deleteFirst();
-  list->printList(); 
+  //list->deleteLast();
+ // list->prepend(1);
+  //list->deleteFirst();
+  //list->printList(); 
+  list->set(1,15);
+  list->insert(2,23);
+   list->printList(); 
+   //list->deleteNode(2);
+      //list->printList(); 
+std::cout<<std::endl;
+list->reverse();
+list->printList(); 
 }
